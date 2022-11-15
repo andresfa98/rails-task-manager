@@ -1,0 +1,13 @@
+<h1 class="mx-5">My tasks</h1>
+<% @task.each do |task| %>
+</div class= "container-fluid py-5">
+<h3 class="fs-4 font-monospace fw-bold mx-5"><%= link_to task.title, task_path(task)%></h3>
+<div class="mx-5 text-decoration-none">
+<%= link_to "Delete task", task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+</div>
+</div>
+<% end %>
+
+<div class="mx-5 text-dark">
+<%= link_to "Add new task", tasks_new_path%>
+</div>
